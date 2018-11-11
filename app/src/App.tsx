@@ -1,46 +1,62 @@
 import * as React from 'react';
-import Button from '@material-ui/core/Button';
-import { boundMethod } from 'autobind-decorator';
 import { NavLink, Route } from 'react-router-dom';
+import boundMethod from 'autobind-decorator';
 
-import logo from './logo.svg';
+import Home from './pages/home/Home';
+import Contest from './pages/contest/Contest';
+import Profile from './pages/profile/Profile';
+import SideMenu from './global/nav/SideMenu';
+import MenuBar from './global/nav/MenuBar';
+
+import HomeIcon from '@material-ui/icons/Home';
+
 import './App.css';
+import { Page } from './models/navigation';
 
-const Home = () => <p>hello <Button>click</Button> <img src={logo}/></p>;
-const Marketing = () => <p>hi</p>;
-const Automation = () => <p>foo</p>;
+interface AppState {
+  sideMenuOpen: boolean;
+  pages: Page[];
+}
 
-export default class App extends React.Component<{}, { text: string }> {
-  constructor(props: object) {
+export default class App extends React.Component<{}, AppState> {
+  constructor(props) {
     super(props);
+
     this.state = {
-      text: 'hello!'
+      sideMenuOpen: false,
+      pages: [
+        {
+          name: 'Home',
+          icon: () => <HomeIcon/>,
+          route: '/home',
+        },
+        {
+          name: 'Contest',
+          icon: () => <HomeIcon/>,
+          route: '/contest',
+        },
+      ],
     };
   }
 
   @boundMethod
-  public callAlert() {
-    this.setState({ text: new Date() + '' });
+  public toggleSideMenu() {
+    this.setState(({ sideMenuOpen }) => ({
+      sideMenuOpen: !sideMenuOpen,
+    }));
   }
 
   public render() {
+    const { sideMenuOpen, pages } = this.state;
+
     return (
       <div className="App">
-        <div className="menu">
-          <NavLink exact to="/">
-            Home
-          </NavLink>
-          <NavLink exact to="/marketing">
-            Marketing
-          </NavLink>
-          <NavLink exact to="/automation">
-            Automation
-          </NavLink>
-        </div>
+        <MenuBar menuClick={this.toggleSideMenu} />
+        <SideMenu open={sideMenuOpen} pages={pages} onClose={this.toggleSideMenu}/>
         <div className="content">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/marketing" component={Marketing} />
-          <Route exact path="/automation" component={Automation} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/contest" component={Contest} />
+          <Route exact path="/profile" component={Profile} />
         </div>
       </div>
     );
