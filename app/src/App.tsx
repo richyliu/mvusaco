@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavLink, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import boundMethod from 'autobind-decorator';
 
 import HomeIcon from '@material-ui/icons/Home';
@@ -19,32 +19,38 @@ interface AppState {
   pages: Page[];
 }
 
-export default class App extends React.Component<{}, AppState> {
+class App extends React.Component<RouteComponentProps, AppState> {
   constructor(props) {
     super(props);
 
+    const pages: Page[] = [
+      {
+        name: 'Home',
+        icon: () => <HomeIcon />,
+        route: '/home',
+        active: false,
+      },
+      {
+        name: 'Contest',
+        icon: () => <CodeIcon />,
+        route: '/contest',
+        active: false,
+      },
+      {
+        name: 'Profile',
+        icon: () => <AccountCircleIcon />,
+        route: '/profile',
+        active: false,
+      },
+    ];
+    pages.map(p => {
+      p.active = p.route === this.props.location.pathname;
+      return p;
+    });
+
     this.state = {
       sideMenuOpen: false,
-      pages: [
-        {
-          name: 'Home',
-          icon: () => <HomeIcon />,
-          route: '/home',
-          active: true,
-        },
-        {
-          name: 'Contest',
-          icon: () => <CodeIcon />,
-          route: '/contest',
-          active: false,
-        },
-        {
-          name: 'Profile',
-          icon: () => <AccountCircleIcon />,
-          route: '/profile',
-          active: false,
-        },
-      ],
+      pages,
     };
   }
 
@@ -59,11 +65,13 @@ export default class App extends React.Component<{}, AppState> {
   public closeSideMenu(route?: string) {
     this.setState(({ pages }) => ({
       sideMenuOpen: false,
-      // set the page that was clicked to active
-      pages: pages.map(page => {
-        page.active = page.route === route;
-        return page;
-      }),
+      // set the page that was clicked to active only if new route
+      pages: route
+        ? pages.map(page => {
+            page.active = page.route === route;
+            return page;
+          })
+        : pages,
     }));
   }
 
@@ -91,3 +99,5 @@ export default class App extends React.Component<{}, AppState> {
     );
   }
 }
+
+export default withRouter(App);
