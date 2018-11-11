@@ -18,8 +18,8 @@ class Contest extends React.Component<any, {}> {
         <Card className={card}>
           <CardContent>
             <p>
-              You have a necklace of N red, white, or blue beads (3 &gt;= N
-              &gt;= 350) some of which are red, others blue, and others white,
+              You have a necklace of N red, white, or blue beads (3 &lt;= N
+              &lt;= 350) some of which are red, others blue, and others white,
               arranged at random. Here are two examples for n=29:
             </p>
           </CardContent>
