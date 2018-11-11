@@ -2,3 +2,7 @@ a {
   text-decoration: inherit;
   color: inherit;
 }
+
+.content {
+  padding: 25px;
+}

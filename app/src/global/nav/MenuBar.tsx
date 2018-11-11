@@ -5,36 +5,49 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Button
+  Button,
+  withStyles
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import './MenuBar.css';
+const styles = {
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+  // to allow the "grow" item to take up all the space
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+};
 
 interface MenuBarProps {
   menuClick: () => void;
+  classes: any;
+  title: string;
 }
 
-export default class MenuBar extends React.Component<MenuBarProps, {}> {
-  public render() {
-    const { menuClick } = this.props;
+const MenuBar: React.SFC<MenuBarProps> = ({ menuClick, title, classes }) => {
+  return (
+    <AppBar position="static" className={classes.root}>
+      <Toolbar>
+        <IconButton
+          className={classes.menuButton}
+          color="inherit"
+          onClick={menuClick}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" color="inherit" className={classes.grow}>
+          {title}
+        </Typography>
+        <Button variant="contained" color="secondary">Login</Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
-    return (
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            className="MenuButton"
-            color="inherit"
-            onClick={menuClick}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" className="text">
-            Food
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    );
-  }
-}
+export default withStyles(styles)(MenuBar);

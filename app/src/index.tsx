@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import 'typeface-roboto';
 import { BrowserRouter } from 'react-router-dom';
+import 'typeface-roboto';
 import { MuiThemeProvider } from '@material-ui/core';
 
 import registerServiceWorker from './registerServiceWorker';
