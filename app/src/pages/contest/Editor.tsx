@@ -14,12 +14,12 @@ export default class Editor extends React.Component<{}, EditorState> {
   }
 
   public editorDidMount(editor, monaco) {
-    console.log('editorDidMount', editor);
+    // console.log('editorDidMount', editor);
     editor.focus();
   }
 
   public onChange(newValue, e) {
-    console.log('onChange', newValue, e);
+    // console.log('onChange', newValue, e);
   }
 
   public render() {
