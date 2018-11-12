@@ -1,3 +1,7 @@
+/**
+ * Displays the top menu bar. Communicates with container for side menu opening
+ * and closing. Also displays a title based on the current route.
+ */
 import * as React from 'react';
 
 import {
@@ -9,6 +13,9 @@ import {
   withStyles
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+
+import { Route } from 'react-router';
+import { Page } from 'src/models/navigation';
 
 const styles = {
   menuButton: {
@@ -24,27 +31,39 @@ const styles = {
   },
 };
 
+// interface MenuBarProps extends StyledComponentProps {
 interface MenuBarProps {
-  menuClick: () => void;
+  pages: Page[];
+  onOpen: () => void;
   classes: any;
-  title: string;
 }
 
-const MenuBar: React.SFC<MenuBarProps> = ({ menuClick, title, classes }) => {
+const MenuBar: React.SFC<MenuBarProps> = ({ pages, onOpen, classes }) => {
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar>
         <IconButton
           className={classes.menuButton}
           color="inherit"
-          onClick={menuClick}
+          onClick={onOpen}
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" color="inherit" className={classes.grow}>
-          {title}
-        </Typography>
-        <Button variant="contained" color="secondary">Login</Button>
+        {pages.map(page => (
+          <Route
+            exact
+            path={page.route}
+            key={page.route}
+            render={() => (
+              <Typography variant="h6" color="inherit" className={classes.grow}>
+                {page.name}
+              </Typography>
+            )}
+          />
+        ))}
+        <Button variant="contained" color="secondary">
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   );

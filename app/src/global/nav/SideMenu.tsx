@@ -1,3 +1,6 @@
+/**
+ * Side menu with navigation links to the pages
+ */
 import * as React from 'react';
 import {
   SwipeableDrawer,
@@ -7,13 +10,13 @@ import {
   ListItemText
 } from '@material-ui/core';
 import { Page } from 'src/models/navigation';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 interface SideMenuProps {
   open: boolean;
   pages: Page[];
   onOpen: () => void;
-  onClose: (route?: string) => void;
+  onClose: () => void;
 }
 
 const SideMenu: React.SFC<SideMenuProps> = ({
@@ -23,19 +26,22 @@ const SideMenu: React.SFC<SideMenuProps> = ({
   onClose,
 }) => {
   return (
-    <SwipeableDrawer open={open} onOpen={onOpen} onClose={() => onClose()}>
+    <SwipeableDrawer open={open} onOpen={onOpen} onClose={onClose}>
       <List>
         {pages.map(page => (
-          <Link to={page.route} key={page.route}>
-            <ListItem
-              button
-              onClick={() => onClose(page.route)}
-              selected={page.active}
-            >
-              <ListItemIcon>{page.icon()}</ListItemIcon>
-              <ListItemText>{page.name}</ListItemText>
-            </ListItem>
-          </Link>
+          <Route
+            exact
+            path={page.route}
+            key={page.route}
+            children={({ match }) => (
+              <Link to={page.route} key={page.route}>
+                <ListItem button onClick={onClose} selected={!!match}>
+                  <ListItemIcon>{page.icon}</ListItemIcon>
+                  <ListItemText>{page.name}</ListItemText>
+                </ListItem>
+              </Link>
+            )}
+          />
         ))}
       </List>
     </SwipeableDrawer>

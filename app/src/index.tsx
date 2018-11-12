@@ -1,3 +1,6 @@
+/**
+ * First to be loaded. Adds wrappers around main app
+ */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
