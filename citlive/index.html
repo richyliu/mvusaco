@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>test</title>
+    </head>
+
+    <body>
+        <h1>hello</h1>
+
+        <pre id="log"></pre>
+        <ul id="outlog"></ul>
+
+        <script src="console.js"></script>
+        <script src="dist/out.js"></script>
+        <script src="ceeportal.js"></script>
+        <script>
+            window.__message_relay = (a, b) => console.log(`TYPE: ${a} PAYLOAD: ${b}`);
+            window.__message_request = (type, payload) => {
+                if (type == 'file') {
+                    return 'file of payload' + payload;
+                }
+            };
+
+            setTimeout(function() {
+                window.__wrapper = Module.cwrap('run', 'null', ['string']);
+                window.__wrapper(`
+                    #include <stdio.h>
+                    #include <relay.h>
+
+                    int main() {
+                        int a = test(28);
+                        printf("hello %d\n", a);
+
+                        printf("Load file: %s\n", loadFile("aroestna"));
+                        print("foo");
+                        return 0;
+                    }
+                `);
+            }, 500);
+        </script>
+    </body>
+</html>
