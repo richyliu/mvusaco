@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring';
+import Row from 'reactstrap/lib/Row';
+import Col from 'reactstrap/lib/Col';
+import { ScrollableProps } from './scrollAnimation';
 
-interface SlantLeftProps {
+interface SlantLeftProps extends ScrollableProps {
   text?: string;
 }
 
@@ -11,27 +13,26 @@ const Slanter = styled.div`
   height: 300px;
   background-color: ${p => p.theme.lightPrimary};
   color: ${p => p.theme.lightSecondary};
-  margin: 10px;
   border-radius: 5px;
-  transform: translateX(0px);
 `;
 
 const Header = styled.h1`
-  padding-top: 80px;
-  margin-left: 80px;
+  padding-top: 30px;
+  margin-left: 30px;
 `;
 
-const SlantLeft: React.FC<SlantLeftProps> = () => (
-  <Spring to={{ transform: 'translateX(0px)' }} delay={5000}>
-    {props => (
-      <Slanter style={props}>
+const moveAmt = -1600;
+const SlantLeft: React.FC<SlantLeftProps> = ({ progress }) => (
+  <Row>
+    <Col>
+      <Slanter style={{ transform: `translateX(${progress * moveAmt}px)` }}>
         <Header>
-          First meeting Monday, Jan. 14 <br />
-          in lunch in Room E202
+          Interested in USACO or <br/>
+          Competitive Programming?
         </Header>
       </Slanter>
-    )}
-  </Spring>
+    </Col>
+  </Row>
 );
 
 export default SlantLeft;

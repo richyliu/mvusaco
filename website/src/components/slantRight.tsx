@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring';
+import { ScrollableProps } from './scrollAnimation';
 
-interface SlantRightProps {
+interface SlantRightProps extends ScrollableProps {
   text?: string;
 }
 
@@ -11,31 +11,25 @@ const Slanter = styled.div`
   height: 300px;
   background-color: ${p => p.theme.lightSecondary};
   color: ${p => p.theme.lightPrimary};
-  margin: 10px;
   border-radius: 5px;
   margin-top: -80px;
 `;
 
 const Header = styled.h1`
   float: right;
-  margin-top: 150px;
-  margin-right: 100px;
+  margin-top: 110px;
+  margin-right: 30px;
+  text-align: right;
 `;
 
-const SlantRight: React.FC<SlantRightProps> = () => (
-  <Spring
-    from={{ transform: 'translateX(500)' }}
-    to={{ transform: 'translateX(0)' }}
-    delay={4000}
-  >
-    {props => (
-      <Slanter style={props}>
-        <Header>
-          Monta Vista <br /> Competitive Programming Club
-        </Header>
-      </Slanter>
-    )}
-  </Spring>
+const moveAmt = 1600;
+const SlantRight: React.FC<SlantRightProps> = ({ progress }) => (
+  <Slanter style={{ transform: `translateX(${progress * moveAmt}px)` }}>
+    <Header>
+      First meeting Monday, Jan. 14 <br />
+      Lunch in Room E202
+    </Header>
+  </Slanter>
 );
 
 export default SlantRight;

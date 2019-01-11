@@ -6,15 +6,11 @@ import Collapse from 'reactstrap/lib/Collapse';
 import Nav from 'reactstrap/lib/Nav';
 import NavItem from 'reactstrap/lib/NavItem';
 import NavLink from 'reactstrap/lib/NavLink';
-// import { UncontrolledDropdown } from 'reactstrap';
-import UncontrolledDropdown from 'reactstrap/lib/UncontrolledDropdown';
-import DropdownToggle from 'reactstrap/lib/DropdownToggle';
-import DropdownMenu from 'reactstrap/lib/DropdownMenu';
-import DropdownItem from 'reactstrap/lib/DropdownItem';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 const Navbar: React.FC = () => (
-  <BootstrapNavbar color="light" light expand="md">
+  <BootstrapNavbar color="dark" dark expand="md">
     <NavbarBrand to="/" tag={Link}>
       MVCPC
     </NavbarBrand>
@@ -30,17 +26,6 @@ const Navbar: React.FC = () => (
             About
           </NavLink>
         </NavItem>
-        {/* <UncontrolledDropdown nav inNavbar>
-          <DropdownToggle nav caret>
-            Options
-          </DropdownToggle>
-          <DropdownMenu right>
-            <DropdownItem>Option 1</DropdownItem>
-            <DropdownItem>Option 2</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Reset</DropdownItem>
-          </DropdownMenu>
-        </UncontrolledDropdown>*/}
       </Nav>
     </Collapse>
   </BootstrapNavbar>

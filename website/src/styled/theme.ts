@@ -9,8 +9,8 @@ export interface MyTheme {
 const theme: MyTheme = {
   darkPrimary: '#272727',
   darkSecondary: '#696773',
-  lightPrimary: '#FED766',
-  lightSecondary: '#009FB7',
+  lightPrimary: '#FEC601',
+  lightSecondary: '#1098F7',
   white: '#EFF1F3',
 };
 

@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import Container from 'reactstrap/lib/Container';
 import Row from 'reactstrap/lib/Row';
 import Col from 'reactstrap/lib/Col';
+import bg from '../../static/images/bg.jpg';
 
-const WideCenterNoStyles = ({ className, children }) => (
+const WideCenterNoStyles = ({ children, ...props }) => (
   <Container>
-    <Row>
-      <Col className={className}>{children}</Col>
-    </Row>
+    <Col {...props}>{children}</Col>
   </Container>
 );
 export const WideCenter = styled(WideCenterNoStyles)`
@@ -24,8 +23,15 @@ export const Center = styled.div`
 
 export const Base = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('https://c.pxhere.com/photos/72/9c/close_up_code_coding_computer_computing_conceptual_data_design-911144.jpg!d');
+    url(${bg});
   background-size: cover;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 100vh;
+`;
+
+export const BlackBg = styled.div`
+  background-color: ${p => p.theme.darkPrimary};
+  padding: 10px;
+  border-radius: 5px;
 `;

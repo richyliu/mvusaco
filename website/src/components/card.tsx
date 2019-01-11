@@ -17,17 +17,9 @@ interface CardProps {
   dark?: boolean;
 }
 
-interface WrappedTheme {
-  theme: MyTheme;
-}
-interface MyCardBodyProps extends WrappedTheme {
-  dark: boolean;
-}
-const MyCardBody = styled(CardBody)`
-  background-color: ${(p: MyCardBodyProps) =>
-    p.dark ? p.theme.darkPrimary : p.theme.white};
-  color: ${(p: MyCardBodyProps) =>
-    p.dark ? p.theme.white : p.theme.darkPrimary};
+const DarkCardBody = styled(CardBody)`
+  background-color: ${p => p.theme.darkPrimary};
+  color: ${p => p.theme.white};
 `;
 
 const IconTitle = styled(CardTitle)`
@@ -36,8 +28,8 @@ const IconTitle = styled(CardTitle)`
 `;
 
 const Card: React.FC<CardProps> = ({ icon, title, children, dark = true }) => (
-  <BootstrapCard dark={dark}>
-    <MyCardBody dark={dark}>
+  <BootstrapCard>
+    <DarkCardBody>
       <IconTitle>
         <FontAwesomeIcon size="5x" icon={icon} />
       </IconTitle>
@@ -45,7 +37,7 @@ const Card: React.FC<CardProps> = ({ icon, title, children, dark = true }) => (
         <h3>{title}</h3>
       </CardSubtitle>
       <CardText>{children}</CardText>
-    </MyCardBody>
+    </DarkCardBody>
   </BootstrapCard>
 );
 
