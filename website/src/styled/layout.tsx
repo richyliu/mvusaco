@@ -1,3 +1,5 @@
+/// <reference path='../custom_typings/images.d.ts'/>
+
 import React from 'react';
 import styled from 'styled-components';
 import Container from 'reactstrap/lib/Container';
@@ -22,12 +24,11 @@ export const Center = styled.div`
 `;
 
 export const Base = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(${bg});
   background-size: cover;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 100vh;
+  background-attachment: fixed;
+  min-height: 100vh;
 `;
 
 export const BlackBg = styled.div`

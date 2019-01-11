@@ -9,22 +9,20 @@ interface SlantRightProps extends ScrollableProps {
 const Slanter = styled.div`
   clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
   height: 300px;
-  background-color: ${p => p.theme.lightSecondary};
+  background-color: ${p => p.theme.white};
   color: ${p => p.theme.lightPrimary};
   border-radius: 5px;
-  margin-top: -80px;
+  /* margin-top: -80px; */
 `;
 
 const Header = styled.h1`
-  float: right;
-  margin-top: 110px;
-  margin-right: 30px;
   text-align: right;
+  padding-top: 110px;
+  margin-right: 30px;
 `;
 
-const moveAmt = 1600;
 const SlantRight: React.FC<SlantRightProps> = ({ progress }) => (
-  <Slanter style={{ transform: `translateX(${progress * moveAmt}px)` }}>
+  <Slanter style={{ transform: `translateX(${progress * 100}vw)` }}>
     <Header>
       First meeting Monday, Jan. 14 <br />
       Lunch in Room E202

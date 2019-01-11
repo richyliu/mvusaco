@@ -11,7 +11,7 @@ interface SlantLeftProps extends ScrollableProps {
 const Slanter = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
   height: 300px;
-  background-color: ${p => p.theme.lightPrimary};
+  background-color: ${p => p.theme.darkPrimary};
   color: ${p => p.theme.lightSecondary};
   border-radius: 5px;
 `;
@@ -21,11 +21,10 @@ const Header = styled.h1`
   margin-left: 30px;
 `;
 
-const moveAmt = -1600;
 const SlantLeft: React.FC<SlantLeftProps> = ({ progress }) => (
   <Row>
     <Col>
-      <Slanter style={{ transform: `translateX(${progress * moveAmt}px)` }}>
+      <Slanter style={{ transform: `translateX(${progress * -100}vw)` }}>
         <Header>
           Interested in USACO or <br/>
           Competitive Programming?

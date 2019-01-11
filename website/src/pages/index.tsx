@@ -9,21 +9,24 @@ import Cards from '../components/indexCards';
 import FreePizza from '../components/freePizza';
 import Logo from '../components/logo';
 import Footer from '../components/footer';
+import StartScrolling from '../components/startScrolling';
 
 const IndexPage: React.FC = () => (
-  <Layout title="MVCPC | Home">
-    <ScrollAnimation
-      scenes={[
-        { el: Logo },
-        { el: SlantLeft, duration: 200, offset: 325 },
-        { el: SlantRight, duration: 200, offset: 105 },
-        // { el: Logo, duration: 200, offset: 150, pin: true },
-        { el: FreePizza, duration: 200, offset: 0},
-        { el: Cards, duration: 300, offset: -100 },
-        { el: Footer, props: { style: { height: '100vh' } } },
-      ]}
-    />
-  </Layout>
+  <>
+    <Layout title="MVCPC | Home">
+      <ScrollAnimation
+        scenes={[
+          { el: Logo, duration: 1000 },
+          { el: SlantLeft, duration: 1000, offset: 200, pin: true },
+          { el: SlantRight, duration: 1000, offset: 200, pin: true },
+          { el: FreePizza, duration: 500, offset: 200, pin: true },
+          { el: Cards, duration: 500, offset: -200 },
+          { el: Footer, props: { style: { height: '100vh' } } },
+        ]}
+      />
+    </Layout>
+    <StartScrolling />
+  </>
 );
 
 export default IndexPage;

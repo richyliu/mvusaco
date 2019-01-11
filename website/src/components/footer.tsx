@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { BlackBg } from '../styled/layout';
 
 const LongDiv = styled(BlackBg)`
-  margin-top: 45vh;
-  margin-bottom: 45vh;
+  margin-top: 95vh;
 `;
 
 const Footer: React.FC = () => (

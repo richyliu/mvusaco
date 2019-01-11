@@ -1,18 +1,21 @@
+/// <reference path='../custom_typings/images.d.ts'/>
+
 import React from 'react';
 import styled from 'styled-components';
 import { ScrollableProps } from './scrollAnimation';
 import logo from '../../static/images/logo.png';
 
 const Wrapper = styled.div`
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 40vh;
+  margin-bottom: 40vh;
   text-align: center;
+  height: 100vh;
 
   & h1 {
-    background-color: ${p => p.theme.lightSecondary};
-    color: ${p => p.theme.lightPrimary};
+    background-color: ${p => p.theme.darkPrimary};
+    color: ${p => p.theme.white};
     border-radius: 5px;
-    padding: 5px;
+    padding: 20px;
     margin-top: 20px;
   }
 `;
@@ -27,9 +30,9 @@ const BigImg = styled.div`
 
 const Logo: React.FC<ScrollableProps> = ({}) => (
   <Wrapper>
-    <BigImg>
+    {/* <BigImg>
       <img src={logo} />
-    </BigImg>
+    </BigImg> */}
     <h1>Monta Vista Competitive Programming Club</h1>
   </Wrapper>
 );
