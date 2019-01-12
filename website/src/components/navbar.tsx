@@ -7,10 +7,9 @@ import Nav from 'reactstrap/lib/Nav';
 import NavItem from 'reactstrap/lib/NavItem';
 import NavLink from 'reactstrap/lib/NavLink';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 
 const Navbar: React.FC = () => (
-  <BootstrapNavbar color="dark" dark expand="md">
+  <BootstrapNavbar color="dark" dark expand="md" sticky="top">
     <NavbarBrand to="/" tag={Link}>
       MVCPC
     </NavbarBrand>

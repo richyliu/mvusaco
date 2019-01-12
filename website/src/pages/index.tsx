@@ -11,16 +11,19 @@ import Logo from '../components/logo';
 import Footer from '../components/footer';
 import StartScrolling from '../components/startScrolling';
 
+console.log(Cards);
 const IndexPage: React.FC = () => (
   <>
     <Layout title="MVCPC | Home">
       <ScrollAnimation
         scenes={[
           { el: Logo, duration: 1000 },
-          { el: SlantLeft, duration: 1000, offset: 200, pin: true },
-          { el: SlantRight, duration: 1000, offset: 200, pin: true },
-          { el: FreePizza, duration: 500, offset: 200, pin: true },
-          { el: Cards, duration: 500, offset: -200 },
+          { el: SlantLeft, duration: 1000, offset: 100, pin: true },
+          { el: SlantRight, duration: 1000, offset: 100, pin: true },
+          { el: FreePizza, duration: 500, offset: 150, pin: true },
+          { el: Cards[0], duration: 500, offset: 100, pin: true  },
+          { el: Cards[1], duration: 500, offset: 100, pin: true  },
+          { el: Cards[2], duration: 500, offset: 100, pin: true  },
           { el: Footer, props: { style: { height: '100vh' } } },
         ]}
       />

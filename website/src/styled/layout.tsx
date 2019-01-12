@@ -24,7 +24,7 @@ export const Center = styled.div`
 `;
 
 export const Base = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
     url(${bg});
   background-size: cover;
   background-attachment: fixed;
