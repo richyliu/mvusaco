@@ -34,9 +34,9 @@ const ScrollWrapper = styled.div`
 /**
  * Use current window scroll y amount
  */
-function useScroll() {
+function useScroll(): number {
   if (typeof window === 'undefined') {
-    return;
+    return 0;
   }
 
   const [scrolled, setScrolled] = useState<number>(window.scrollY);

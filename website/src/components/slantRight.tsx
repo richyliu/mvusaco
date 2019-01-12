@@ -7,17 +7,15 @@ interface SlantRightProps extends ScrollableProps {
 }
 
 const Slanter = styled.div`
-  clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%);
-  height: 300px;
+  /* clip-path: polygon(0 50%, 100% 0, 100% 100%, 0 100%); */
   background-color: ${p => p.theme.white};
   color: ${p => p.theme.lightPrimary};
   border-radius: 5px;
-  /* margin-top: -80px; */
 `;
 
 const Header = styled.h1`
   text-align: right;
-  padding-top: 110px;
+  padding: 30px;
   margin-right: 30px;
 `;
 
