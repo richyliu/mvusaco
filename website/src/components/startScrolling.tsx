@@ -34,25 +34,19 @@ const ScrollWrapper = styled.div`
 /**
  * Use current window scroll y amount
  */
-function useScroll() {
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  const [scrolled, setScrolled] = useState<number>(window.scrollY);
+function useScroll(): number {
+  console.log(typeof window);
+  const [scrolled, setScrolled] = useState<number>(
+    typeof window === 'undefined' ? 0 : window.scrollY
+  );
 
   useEffect(
     () => {
-      // check every 100 ms
-      const wait = setInterval(() => {
-        // set scroll if different
-        if (scrolled !== window.scrollY) {
-          setScrolled(window.scrollY);
-          clearInterval(wait);
-        }
-      }, 100);
+      const checkScroll = () => setScrolled(window.scrollY);
+      window.addEventListener('scroll', checkScroll);
+
       // return cleanup func
-      return () => clearInterval(wait);
+      return () => window.removeEventListener('scroll', checkScroll);
     },
     [scrolled, setScrolled]
   );

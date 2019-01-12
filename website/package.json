@@ -10,6 +10,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "serve-deploy": "cd public/ && python3 -m http.server && cd ..",
     "deploy": "surge ./public/ mvcpc.org",
     "build-deploy": "npm run build && npm run deploy"
   },
