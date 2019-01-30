@@ -13,10 +13,14 @@ const bounce = keyframes`
   }
 `;
 
+interface ScrollWrapperProps {
+  hidden: boolean;
+}
 const ScrollWrapper = styled.div`
   position: fixed;
   bottom: 20px;
   text-align: center;
+  display: ${(p: ScrollWrapperProps) => p.hidden ? 'none' : 'block'}
 
   & .arrow {
     position: fixed;
@@ -58,10 +62,11 @@ const StartScrolling: React.FC = () => {
   const scrollTop = useScroll();
 
   return (
-    <ScrollWrapper>
-      {scrollTop < 300 && <div className="arrow" />}
+    <ScrollWrapper hidden={scrollTop > 300}>
+      <div className="arrow" />
     </ScrollWrapper>
   );
 };
 
 export default StartScrolling;
+
