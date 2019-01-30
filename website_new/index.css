@@ -1176,39 +1176,19 @@ p :last-child {
   font-family: Futurice;
   /* poc to change the font */
   /* src: url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2'); */
-  src: url(/static/Futurice-Bold.10a0a07b.eot);
-  src: url(/static/Futurice-Bold.b244fd83.woff2) format("woff2"),
-    url(/static/Futurice-Bold.71aaf25a.woff) format("woff"),
-    url(/static/Futurice-Bold.06d78a2b.ttf) format("truetype"),
-    url(/static/Futurice-Bold.f9a1f157.svg#Futurice-Bold) format("svg"),
-    url(/static/Futurice-Bold.10a0a07b.eot?#iefix)
-      format("embedded-opentype");
+  src: url(/static/Futurice-Bold.b244fd83.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: Futurice;
-  src: url(/static/Futurice-Regular.42e993c8.eot);
-  src: url(/static/Futurice-Regular.edc3bf04.woff2) format("woff2"),
-    url(/static/Futurice-Regular.757f95bd.woff) format("woff"),
-    url(/static/Futurice-Regular.a6292cd5.ttf) format("truetype"),
-    url(/static/Futurice-Regular.38877820.svg#Futurice-Regular)
-      format("svg"),
-    url(/static/Futurice-Regular.42e993c8.eot?#iefix)
-      format("embedded-opentype");
+  src: url(/static/Futurice-Regular.edc3bf04.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Futurice-Monospaced;
-  src: url(/static/Futurice-Monospaced.f0bc315a.eot);
-  src: url(/static/Futurice-Monospaced.9e771024.woff2) format("woff2"),
-    url(/static/Futurice-Monospaced.b16cf3d3.woff) format("woff"),
-    url(/static/Futurice-Monospaced.9783420f.ttf) format("truetype"),
-    url(/static/Futurice-Monospaced.f65506ef.svg#Futurice-Monospaced)
-      format("svg"),
-    url(/static/Futurice-Monospaced.f0bc315a.eot?#iefix)
-      format("embedded-opentype");
+  src: url(/static/Futurice-Monospaced.9e771024.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -1437,12 +1417,12 @@ input[type="submit"] {
   animation-delay: 0.25s;
 }
 .transition-entered .hero-content > :nth-child(2) {
-  -webkit-animation-delay: 1.25s;
-  animation-delay: 1.25s;
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
 }
 .transition-entered .hero-content > :nth-child(3) {
-  -webkit-animation-delay: 2.25s;
-  animation-delay: 2.25s;
+  -webkit-animation-delay: 1.25s;
+  animation-delay: 1.25s;
 }
 .transition-entered .hero-content > * {
   -webkit-animation: textTransition 0.5s;
@@ -1733,8 +1713,8 @@ input[type="submit"] {
   }
 }
 .src-components----Quote-module---midnight---3ml3D {
-  background-color: #5127c6;
-  border-color: #5127c6;
+  background-color: #4B2D9B;
+  border-color: #4B2D9B;
   color: #fff;
 }
 .src-components----Quote-module---inView---2RzqP > div {
@@ -1760,7 +1740,8 @@ input[type="submit"] {
 .src-components-Lift----ServicesLift-module---outview---22V-A
   .src-components-Lift----ServicesLift-module---serviceCard---2_clc {
   background: #401f9e;
-  cursor: pointer;
+  /* background: #4d2cab; */
+  /* cursor: pointer; */
 }
 .src-components-Lift----ServicesLift-module---outview---22V-A
   .src-components-Lift----ServicesLift-module---serviceCard---2_clc:first-of-type {
@@ -3368,20 +3349,8 @@ h6 {
     font-size: 30px;
   }
 }
-@font-face {
-  font-family: heart_font;
-  src: url(/static/heart_font.0f36c7c4.eot);
-  src: url(/static/heart_font.0f36c7c4.eot#iefix)
-      format("embedded-opentype"),
-    url(/static/heart_font.fa6fdfcb.ttf) format("truetype"),
-    url(/static/heart_font.664e617e.woff) format("woff"),
-    url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8bWV0YWRhdGE+R2VuZXJhdGVkIGJ5IEljb01vb248L21ldGFkYXRhPgo8ZGVmcz4KPGZvbnQgaWQ9ImhlYXJ0X2ZvbnQiIGhvcml6LWFkdi14PSIxMDI0Ij4KPGZvbnQtZmFjZSB1bml0cy1wZXItZW09IjEwMjQiIGFzY2VudD0iOTYwIiBkZXNjZW50PSItNjQiIC8+CjxtaXNzaW5nLWdseXBoIGhvcml6LWFkdi14PSIxMDI0IiAvPgo8Z2x5cGggdW5pY29kZT0iJiN4MjA7IiBob3Jpei1hZHYteD0iNTEyIiBkPSIiIC8+CjxnbHlwaCB1bmljb2RlPSImI3hlOTAwOyIgZ2x5cGgtbmFtZT0id2Vsb3ZlX2hlYXJ0IiBob3Jpei1hZHYteD0iMTQxOSIgZD0iTTcxMC4xOTMgNjc4LjkxNGMxOS4zOTggMzguODggMzMuOTM2IDczLjA2OCA1Mi42NjQgMTA0Ljc0MiAxMjQuMzkyIDIxMS4wMzQgNDM3LjI3NyAyMzYuNTQ5IDU4Ni42ODEgNTAuNDg2IDkxLjgzOC0xMTQuMzM2IDExNi4yMjItMzkyLjkwOC03MS44OTUtNTEzLjI3OC03OS42MDQtNTEuMDcyLTE2Ni4yNDctODcuMDYyLTI1MC45NjItMTI3LjQ1LTEyNC45MzYtNTkuNTM1LTI0My4wMDItMTI3Ljc0My0zMTUuMTA2LTI1Ny42MjQtNzMuNjk2IDEzMS4yNjMtMTkyLjcyNSAyMDAuMTQxLTMxOS41NDcgMjU5Ljc2LTgyLjk1NiAzOS40NjctMTcwLjE4NSA3MC43NjQtMjQ1Ljc2NyAxMjQuNzY5LTEzNS45NTUgOTcuMDc1LTE4NC4wMTEgMjgxLjc5OC0xMTQuODgxIDQ0MS4xNzMgNjIuOTI5IDE0NC45MjEgMjE5LjAzNyAyMjIuODQ5IDM4NC4wNjggMTkxLjY3OCAxNDAuNTY0LTI2LjUyMSAyMjAuNDE5LTk5LjYzMSAyOTQuNzQ0LTI3NC4yNTd6IiAvPgo8L2ZvbnQ+PC9kZWZzPjwvc3ZnPg==#heart_font)
-      format("svg");
-  font-weight: 400;
-  font-style: normal;
-}
 .src-components----WeLove-module---welove_heart---jj0eT:before {
-  font-family: heart_font !important;
+  /* font-family: heart_font !important; */
   speak: none;
   font-style: normal;
   font-weight: 400;
