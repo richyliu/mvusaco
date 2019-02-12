@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html --port 8000",
     "build": "parcel build index.html",
-    "deploy": "surge dist/ mvcpc.surge.sh",
+    "deploy": "surge dist/ mvcpc.org",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.8"
+  },
+  "dependencies": {
+    "parcel": "^1.11.0"
   }
 }

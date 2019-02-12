@@ -1686,8 +1686,7 @@ input[type="submit"] {
   }
 }
 .src-components----Quote-module---midnight---3ml3D {
-  background-color: #4B2D9B;
-  border-color: #4B2D9B;
+  background-color: rgb(56, 161, 179);
   color: #fff;
 }
 .src-components----Quote-module---inView---2RzqP > div {
@@ -1712,9 +1711,7 @@ input[type="submit"] {
 }
 .src-components-Lift----ServicesLift-module---outview---22V-A
   .src-components-Lift----ServicesLift-module---serviceCard---2_clc {
-  background: #401f9e;
-  /* background: #4d2cab; */
-  /* cursor: pointer; */
+  background: #4d2cab;
 }
 .src-components-Lift----ServicesLift-module---outview---22V-A
   .src-components-Lift----ServicesLift-module---serviceCard---2_clc:first-of-type {
